@@ -1,0 +1,13 @@
+{
+  "name": "@quantum/payment",
+  "version": "1.0.0",
+  "main": "dist",
+  "scripts": {
+    "api": "yarn run:node dist/api/index.js",
+    "consumer": "yarn run:node dist/consumer/index.js"
+  },
+  "devDependencies": {
+    "@quantum/definitions": "workspace:*",
+    "@types/node": "^16.11.12"
+  }
+}

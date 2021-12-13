@@ -1,0 +1,8 @@
+{
+  "name": "@quantum/definitions",
+  "version": "1.0.0",
+  "main": "dist",
+  "devDependencies": {
+    "@types/node": "^16.11.12"
+  }
+}
