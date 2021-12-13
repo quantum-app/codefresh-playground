@@ -1,4 +1,12 @@
 {
   "name": "@quantum/payment-consumer",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "main": "dist",
+  "scripts": {
+    "build": "yarn build:ts"
+  },
+  "devDependencies": {
+    "@quantum/definitions": "workspace:*",
+    "@types/node": "^16.11.12"
+  }
 }
