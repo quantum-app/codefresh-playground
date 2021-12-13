@@ -1,1 +1,1 @@
-console.log('Payment Consumer started!')
+export const contract = "Quantum Contract"

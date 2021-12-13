@@ -1,11 +1,19 @@
 {
   "name": "codefresh-playground",
   "packageManager": "yarn@3.1.1",
+  "scripts": {
+    "build:ts": "tsc --build $PWD",
+    "run:node": "yarn node $PWD/$0",
+    "root:echo": "echo $PWD"
+  },
   "devDependencies": {
     "typescript": "^4.5.3"
   },
   "workspaces": [
     "packages/**/*",
     "apps/**/*"
-  ]
+  ],
+  "dependencies": {
+    "@types/node": "^16.11.12"
+  }
 }

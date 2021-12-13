@@ -5,40 +5,43 @@ __metadata:
   version: 5
   cacheKey: 8
 
-"@quantum/definitions@workspace:packages/definitions":
+"@quantum/definitions@workspace:*, @quantum/definitions@workspace:packages/definitions":
   version: 0.0.0-use.local
   resolution: "@quantum/definitions@workspace:packages/definitions"
+  dependencies:
+    "@types/node": ^16.11.12
   languageName: unknown
   linkType: soft
 
-"@quantum/order-api@workspace:apps/order/api":
+"@quantum/order@workspace:apps/order":
   version: 0.0.0-use.local
-  resolution: "@quantum/order-api@workspace:apps/order/api"
+  resolution: "@quantum/order@workspace:apps/order"
+  dependencies:
+    "@types/node": ^16.11.12
   languageName: unknown
   linkType: soft
 
-"@quantum/order-consumer@workspace:apps/order/consumer":
+"@quantum/payment@workspace:apps/payment":
   version: 0.0.0-use.local
-  resolution: "@quantum/order-consumer@workspace:apps/order/consumer"
+  resolution: "@quantum/payment@workspace:apps/payment"
+  dependencies:
+    "@quantum/definitions": "workspace:*"
+    "@types/node": ^16.11.12
   languageName: unknown
   linkType: soft
 
-"@quantum/payment-api@workspace:apps/payment/api":
-  version: 0.0.0-use.local
-  resolution: "@quantum/payment-api@workspace:apps/payment/api"
-  languageName: unknown
-  linkType: soft
-
-"@quantum/payment-consumer@workspace:apps/payment/consumer":
-  version: 0.0.0-use.local
-  resolution: "@quantum/payment-consumer@workspace:apps/payment/consumer"
-  languageName: unknown
-  linkType: soft
+"@types/node@npm:^16.11.12":
+  version: 16.11.12
+  resolution: "@types/node@npm:16.11.12"
+  checksum: a3feb346d61a56f5a137c29bb8c63cfa3cc02e184b9dffdc18ef1528dcce55596e570575215a2e39e6ce69343eeb2a5ba71c271938f1dc8db4cc393902855412
+  languageName: node
+  linkType: hard
 
 "codefresh-playground@workspace:.":
   version: 0.0.0-use.local
   resolution: "codefresh-playground@workspace:."
   dependencies:
+    "@types/node": ^16.11.12
     typescript: ^4.5.3
   languageName: unknown
   linkType: soft

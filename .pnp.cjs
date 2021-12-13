@@ -23,20 +23,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:."
       },
       {
-        "name": "@quantum/order-api",
-        "reference": "workspace:apps/order/api"
+        "name": "@quantum/order",
+        "reference": "workspace:apps/order"
       },
       {
-        "name": "@quantum/order-consumer",
-        "reference": "workspace:apps/order/consumer"
-      },
-      {
-        "name": "@quantum/payment-api",
-        "reference": "workspace:apps/payment/api"
-      },
-      {
-        "name": "@quantum/payment-consumer",
-        "reference": "workspace:apps/payment/consumer"
+        "name": "@quantum/payment",
+        "reference": "workspace:apps/payment"
       },
       {
         "name": "@quantum/definitions",
@@ -47,10 +39,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "ignorePatternData": "(^(?:\\.yarn\\/sdks(?:\\/(?!\\.{1,2}(?:\\/|$))(?:(?:(?!(?:^|\\/)\\.{1,2}(?:\\/|$)).)*?)|$))$)",
     "fallbackExclusionList": [
       ["@quantum/definitions", ["workspace:packages/definitions"]],
-      ["@quantum/order-api", ["workspace:apps/order/api"]],
-      ["@quantum/order-consumer", ["workspace:apps/order/consumer"]],
-      ["@quantum/payment-api", ["workspace:apps/payment/api"]],
-      ["@quantum/payment-consumer", ["workspace:apps/payment/consumer"]],
+      ["@quantum/order", ["workspace:apps/order"]],
+      ["@quantum/payment", ["workspace:apps/payment"]],
       ["codefresh-playground", ["workspace:."]]
     ],
     "fallbackPool": [
@@ -60,6 +50,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {
           "packageLocation": "./",
           "packageDependencies": [
+            ["@types/node", "npm:16.11.12"],
             ["typescript", "patch:typescript@npm%3A4.5.3#~builtin<compat/typescript>::version=4.5.3&hash=493e53"]
           ],
           "linkType": "SOFT",
@@ -69,45 +60,40 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ["workspace:packages/definitions", {
           "packageLocation": "./packages/definitions/",
           "packageDependencies": [
-            ["@quantum/definitions", "workspace:packages/definitions"]
+            ["@quantum/definitions", "workspace:packages/definitions"],
+            ["@types/node", "npm:16.11.12"]
           ],
           "linkType": "SOFT",
         }]
       ]],
-      ["@quantum/order-api", [
-        ["workspace:apps/order/api", {
-          "packageLocation": "./apps/order/api/",
+      ["@quantum/order", [
+        ["workspace:apps/order", {
+          "packageLocation": "./apps/order/",
           "packageDependencies": [
-            ["@quantum/order-api", "workspace:apps/order/api"]
+            ["@quantum/order", "workspace:apps/order"],
+            ["@types/node", "npm:16.11.12"]
           ],
           "linkType": "SOFT",
         }]
       ]],
-      ["@quantum/order-consumer", [
-        ["workspace:apps/order/consumer", {
-          "packageLocation": "./apps/order/consumer/",
+      ["@quantum/payment", [
+        ["workspace:apps/payment", {
+          "packageLocation": "./apps/payment/",
           "packageDependencies": [
-            ["@quantum/order-consumer", "workspace:apps/order/consumer"]
+            ["@quantum/payment", "workspace:apps/payment"],
+            ["@quantum/definitions", "workspace:packages/definitions"],
+            ["@types/node", "npm:16.11.12"]
           ],
           "linkType": "SOFT",
         }]
       ]],
-      ["@quantum/payment-api", [
-        ["workspace:apps/payment/api", {
-          "packageLocation": "./apps/payment/api/",
+      ["@types/node", [
+        ["npm:16.11.12", {
+          "packageLocation": "./.yarn/cache/@types-node-npm-16.11.12-0c51fb0c8d-a3feb346d6.zip/node_modules/@types/node/",
           "packageDependencies": [
-            ["@quantum/payment-api", "workspace:apps/payment/api"]
+            ["@types/node", "npm:16.11.12"]
           ],
-          "linkType": "SOFT",
-        }]
-      ]],
-      ["@quantum/payment-consumer", [
-        ["workspace:apps/payment/consumer", {
-          "packageLocation": "./apps/payment/consumer/",
-          "packageDependencies": [
-            ["@quantum/payment-consumer", "workspace:apps/payment/consumer"]
-          ],
-          "linkType": "SOFT",
+          "linkType": "HARD",
         }]
       ]],
       ["codefresh-playground", [
@@ -115,6 +101,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["codefresh-playground", "workspace:."],
+            ["@types/node", "npm:16.11.12"],
             ["typescript", "patch:typescript@npm%3A4.5.3#~builtin<compat/typescript>::version=4.5.3&hash=493e53"]
           ],
           "linkType": "SOFT",
