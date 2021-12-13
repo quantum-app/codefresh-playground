@@ -1,0 +1,7 @@
+{
+  "name": "@quantum/order-consumer",
+  "version": "1.0.0",
+  "devDependencies": {
+    "@types/node": "^16.11.12"
+  }
+}
