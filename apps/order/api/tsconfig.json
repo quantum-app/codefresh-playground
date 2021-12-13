@@ -1,0 +1,20 @@
+{
+  "baseUrl": "./",
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "dist",
+    "declaration": false,
+    "noImplicitAny": false,
+    "noUnusedParameters": false,
+    "strictNullChecks": false,
+    "paths": {
+      "@v1/*": ["source/*"],
+      "@v2/*": ["source/v2/*"],
+      "@integration/*": ["tests/*"]
+    },
+    "rootDir": "./"
+  },
+  "include": ["source/**/*", "source/*", "tests/**/*", "tests/*"],
+  "exclude": ["dist", "public"]
+}
