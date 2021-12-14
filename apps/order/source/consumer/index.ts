@@ -1,1 +1,1 @@
-console.log('Order Consumer started!')
+console.log('Order Consumer started!');
