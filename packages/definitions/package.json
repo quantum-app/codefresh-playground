@@ -2,6 +2,9 @@
   "name": "@quantum/definitions",
   "version": "1.0.0",
   "main": "dist",
+  "scripts": {
+    "prepare": "yarn build:ts"
+  },
   "devDependencies": {
     "@types/node": "^16.11.12"
   }

@@ -4,7 +4,8 @@
   "main": "dist",
   "scripts": {
     "api": "yarn run:node dist/api/index.js",
-    "consumer": "yarn run:node dist/consumer/index.js"
+    "consumer": "yarn run:node dist/consumer/index.js",
+    "lint": "yarn root:lint"
   },
   "devDependencies": {
     "@types/node": "^16.11.12"

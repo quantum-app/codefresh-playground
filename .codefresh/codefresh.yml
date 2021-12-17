@@ -19,6 +19,11 @@ steps:
     git: "github"
     stage: "clone"
 
+  build:
+    title: "Build docker image"
+    type: "build"
+    disable_push: true
+
   test:
     title: "Running test"
     type: "freestyle" # Run any command

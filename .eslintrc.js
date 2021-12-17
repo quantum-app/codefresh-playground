@@ -1,3 +1,5 @@
+require('@rushstack/eslint-patch/modern-module-resolution');
+
 const MAX_COMPLEXITY = 7;
 const MAX_PARAMETERS = 3;
 
@@ -37,7 +39,7 @@ module.exports = {
     'plugin:fp/recommended',
     'plugin:unicorn/recommended',
     'prettier',
-    'prettier/@typescript-eslint',
+    'prettier/prettier',
     'plugin:import/typescript',
     'plugin:sonarjs/recommended',
     'plugin:promise/recommended',
